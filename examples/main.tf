@@ -1,19 +1,23 @@
 terraform {
   required_providers {
-    julien = {
+    colors = {
       version = "0.2.0"
-      source  = "hashicorp.com/edu/julien"
+      source  = "hashicorp.com/julien-jean/colors"
     }
   }
 }
 
-provider "julien" {
+provider "colors" {
 }
 
-data "julien_color" "three_colors" {
+data "colors_random_colors" "three_colors" {
   number = 3
 }
 
+resource "null_resource" "cluster" {
+  for_each = data.colors_random_colors.three_colors
+}
+
 output "foo_colors" {
-  value = data.julien_color.three_colors.colors
+  value = data.colors_random_colors.three_colors
 }

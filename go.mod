@@ -1,4 +1,4 @@
-module terraform-provider
+module terraform-provider-colors
 
 go 1.16
 

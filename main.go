@@ -1,12 +1,13 @@
 package main
 
 import (
+	"terraform-provider-colors/colors"
+
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-	"terraform-provider/julien"
 )
 
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: julien.Provider,
+		ProviderFunc: colors.Provider,
 	})
 }
