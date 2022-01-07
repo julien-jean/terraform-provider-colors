@@ -13,7 +13,7 @@ func dataSourceRandomColors() *schema.Resource {
 	return &schema.Resource{
 		ReadContext: dataSourceRandomColorsRead,
 		Schema: map[string]*schema.Schema{
-			"number": &schema.Schema{
+			"number": {
 				Type:     schema.TypeInt,
 				Default:  1,
 				Optional: true,

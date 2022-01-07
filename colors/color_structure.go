@@ -18,7 +18,7 @@ func bareColorSchema() *schema.Schema {
 		Computed: true,
 		Elem: &schema.Resource{
 			Schema: map[string]*schema.Schema{
-				"name": &schema.Schema{
+				"name": {
 					Type:     schema.TypeString,
 					Computed: true,
 				},

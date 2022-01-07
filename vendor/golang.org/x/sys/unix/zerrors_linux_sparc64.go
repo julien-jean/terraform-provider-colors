@@ -875,4 +875,3 @@ var signalList = [...]struct {
 	{30, "SIGUSR1", "user defined signal 1"},
 	{31, "SIGUSR2", "user defined signal 2"},
 }
-                                                                                        
