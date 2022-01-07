@@ -26,4 +26,4 @@ provider_test: test install
 	cd examples && $(MAKE) test
 
 docs:
-	go generate
+	go run github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
