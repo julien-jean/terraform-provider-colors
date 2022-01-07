@@ -13,7 +13,7 @@ INSTALL_DIR=~/.terraform.d/plugins/$(HOSTNAME)/$(NAMESPACE)/$(NAME)/$(VERSION)/$
 build:
 	goreleaser build --snapshot --single-target --rm-dist
 
-install: build
+install: build generate
 	mkdir -p $(INSTALL_DIR)
 	cp $(shell ls dist/terraform-provider-colors_linux_amd64/*) $(INSTALL_DIR)
 	chmod +x $(INSTALL_DIR)/*
@@ -24,3 +24,6 @@ test:
 
 provider_test: test install
 	cd examples && $(MAKE) test
+
+docs:
+	go generate
